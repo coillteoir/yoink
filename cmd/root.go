@@ -51,6 +51,13 @@ func yoink(path string, remove bool) error {
 		return err
 	}
 
+	if remove {
+		err = os.Remove(path)
+		if err != nil {
+			return err
+		}
+	}
+
 	return nil
 }
 
